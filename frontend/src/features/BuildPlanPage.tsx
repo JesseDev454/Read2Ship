@@ -3,6 +3,7 @@ import { AlertTriangle, Copy, RefreshCw, Share2, Sparkles } from "lucide-react";
 import { ArticlePreviewCard } from "../components/ArticlePreviewCard";
 import { Button } from "../components/Button";
 import { EmptyState } from "../components/EmptyState";
+import { GuidanceCard } from "../components/GuidanceCard";
 import { Sidebar } from "../components/Sidebar";
 import { TaskCard } from "../components/TaskCard";
 import { TechStackChips } from "../components/TechStackChips";
@@ -14,6 +15,20 @@ import type { Difficulty } from "../types/read2ship";
 import { useState } from "react";
 
 const difficultyOptions: Difficulty[] = ["Beginner", "Intermediate", "Advanced"];
+const difficultyDetails: Record<Difficulty, { description: string; bestFor: string }> = {
+  Beginner: {
+    description: "Smaller scope, easier implementation tasks, and a faster path to a finished demo.",
+    bestFor: "Best when you want something you can ship quickly or explain easily.",
+  },
+  Intermediate: {
+    description: "Balanced scope with enough depth for a hackathon-ready developer tool.",
+    bestFor: "Best default for useful projects that still feel realistic to finish.",
+  },
+  Advanced: {
+    description: "Deeper architecture, integrations, and more challenging implementation choices.",
+    bestFor: "Best when you want a more ambitious plan with stronger technical depth.",
+  },
+};
 
 export function BuildPlanPage() {
   const navigate = useNavigate();
@@ -42,6 +57,7 @@ export function BuildPlanPage() {
   }
 
   const activePlan = plan;
+  const selectedDifficultyDetails = difficultyDetails[selectedDifficulty];
 
   async function copyPlan() {
     await copyText(planToMarkdown(activePlan));
@@ -94,42 +110,65 @@ export function BuildPlanPage() {
     <div className="min-h-screen bg-bg-app pb-24 text-text-primary md:pb-0 md:pl-64">
       <Sidebar />
       <main className="w-full max-w-none px-4 py-6 sm:px-6 lg:px-8">
-        <div className="mb-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+        <div className="mb-6 flex flex-col justify-between gap-4 xl:flex-row xl:items-start">
           <div>
             <div className="label-code mb-2">Generated Build Plan</div>
             <h1 className="text-3xl font-bold text-white">Your next build</h1>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-text-secondary">
+              Regenerate keeps your daily.dev analysis and asks AI for a fresh plan. Change difficulty first if you want a different scope.
+            </p>
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <div className="rounded-lg border border-white/10 bg-black/20 p-1">
+          <div className="w-full max-w-xl rounded-lg border border-white/10 bg-black/20 p-3">
+            <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <div className="label-code mb-1">Regeneration Difficulty</div>
+                <p className="text-xs text-text-tertiary">Applies to the next plan you generate.</p>
+              </div>
+              <Button
+                variant="secondary"
+                icon={<RefreshCw size={16} />}
+                onClick={handleRegenerate}
+                disabled={isRegenerating}
+                className="w-full sm:w-auto"
+              >
+                {isRegenerating ? "Regenerating..." : "Regenerate"}
+              </Button>
+            </div>
+            <div className="rounded-lg border border-white/10 bg-surface-deep p-1">
               <div className="grid grid-cols-3 gap-1" role="group" aria-label="Regeneration difficulty">
-                {difficultyOptions.map((difficulty) => (
-                  <button
-                    key={difficulty}
-                    type="button"
-                    onClick={() => setSelectedDifficulty(difficulty)}
-                    disabled={isRegenerating}
-                    className={`min-h-9 rounded-md px-3 text-xs font-semibold transition ${
-                      selectedDifficulty === difficulty
-                        ? "bg-primary text-white shadow-glow"
-                        : "text-text-secondary hover:bg-white/[0.06] hover:text-white"
-                    }`}
-                    aria-pressed={selectedDifficulty === difficulty}
-                  >
-                    {difficulty}
-                  </button>
-                ))}
+                {difficultyOptions.map((difficulty) => {
+                  const details = difficultyDetails[difficulty];
+                  return (
+                    <button
+                      key={difficulty}
+                      type="button"
+                      onClick={() => setSelectedDifficulty(difficulty)}
+                      disabled={isRegenerating}
+                      title={details.description}
+                      className={`min-h-9 rounded-md px-2 text-xs font-semibold transition sm:px-3 ${
+                        selectedDifficulty === difficulty
+                          ? "bg-primary text-white shadow-glow"
+                          : "text-text-secondary hover:bg-white/[0.06] hover:text-white"
+                      }`}
+                      aria-pressed={selectedDifficulty === difficulty}
+                    >
+                      {difficulty}
+                    </button>
+                  );
+                })}
               </div>
             </div>
-            <Button
-              variant="secondary"
-              icon={<RefreshCw size={16} />}
-              onClick={handleRegenerate}
-              disabled={isRegenerating}
-            >
-              {isRegenerating ? "Regenerating..." : "Regenerate"}
-            </Button>
-            <Link to={`/plan/${activePlan.slug}`}>
-              <Button variant="secondary" icon={<Share2 size={16} />} className="w-full sm:w-auto">
+            <div className="mt-3 rounded-lg border border-primary/20 bg-primary/10 p-3">
+              <div className="text-xs font-semibold text-purple-100">{selectedDifficulty}</div>
+              <p className="mt-1 text-xs leading-5 text-text-secondary">
+                {selectedDifficultyDetails.description}
+              </p>
+              <p className="mt-1 text-xs leading-5 text-text-tertiary">
+                {selectedDifficultyDetails.bestFor}
+              </p>
+            </div>
+            <Link to={`/plan/${activePlan.slug}`} className="mt-3 block">
+              <Button variant="secondary" icon={<Share2 size={16} />} className="w-full">
                 Create Share Card
               </Button>
             </Link>
@@ -157,6 +196,18 @@ export function BuildPlanPage() {
             </span>
           </div>
         ) : null}
+
+        <GuidanceCard
+          className="mb-4"
+          eyebrow="Regeneration guide"
+          title="Want another idea from the same reading analysis?"
+          description="Choose a difficulty, then regenerate. Your current plan stays visible while AI creates a fresh variation from the daily.dev themes and posts already analyzed."
+          items={[
+            { label: "Beginner", text: "Fastest path to a small, demoable project." },
+            { label: "Intermediate", text: "Balanced scope for a polished hackathon build." },
+            { label: "Advanced", text: "More architecture, integrations, and technical depth." },
+          ]}
+        />
 
         <section className="panel relative mb-6 overflow-hidden p-6 sm:p-8">
           <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
