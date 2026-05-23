@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model GeneratedPlan {
+  id               String   @id @default(cuid())
+  slug             String   @unique
+  profile          Json
+  projectTitle     String
+  summary          String
+  currentDirection String
+  difficulty       String
+  estimatedTime    String
+  track            String
+  stack            Json
+  tasks            Json
+  bonusFeature     String?
+  inspiredBy       Json
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
