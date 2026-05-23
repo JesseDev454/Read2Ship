@@ -3,7 +3,7 @@ import { AlertTriangle, Copy, RefreshCw, Share2, Sparkles } from "lucide-react";
 import { ArticlePreviewCard } from "../components/ArticlePreviewCard";
 import { Button } from "../components/Button";
 import { EmptyState } from "../components/EmptyState";
-import { GuidanceCard } from "../components/GuidanceCard";
+import { OnboardingTour } from "../components/OnboardingTour";
 import { Sidebar } from "../components/Sidebar";
 import { TaskCard } from "../components/TaskCard";
 import { TechStackChips } from "../components/TechStackChips";
@@ -118,7 +118,7 @@ export function BuildPlanPage() {
               Regenerate keeps your daily.dev analysis and asks AI for a fresh plan. Change difficulty first if you want a different scope.
             </p>
           </div>
-          <div className="w-full max-w-xl rounded-lg border border-white/10 bg-black/20 p-3">
+          <div className="w-full max-w-xl rounded-lg border border-white/10 bg-black/20 p-3" data-tour="build-plan-difficulty">
             <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <div className="label-code mb-1">Regeneration Difficulty</div>
@@ -130,6 +130,7 @@ export function BuildPlanPage() {
                 onClick={handleRegenerate}
                 disabled={isRegenerating}
                 className="w-full sm:w-auto"
+                data-tour="build-plan-regenerate"
               >
                 {isRegenerating ? "Regenerating..." : "Regenerate"}
               </Button>
@@ -167,7 +168,7 @@ export function BuildPlanPage() {
                 {selectedDifficultyDetails.bestFor}
               </p>
             </div>
-            <Link to={`/plan/${activePlan.slug}`} className="mt-3 block">
+            <Link to={`/plan/${activePlan.slug}`} className="mt-3 block" data-tour="build-plan-share">
               <Button variant="secondary" icon={<Share2 size={16} />} className="w-full">
                 Create Share Card
               </Button>
@@ -196,18 +197,6 @@ export function BuildPlanPage() {
             </span>
           </div>
         ) : null}
-
-        <GuidanceCard
-          className="mb-4"
-          eyebrow="Regeneration guide"
-          title="Want another idea from the same reading analysis?"
-          description="Choose a difficulty, then regenerate. Your current plan stays visible while AI creates a fresh variation from the daily.dev themes and posts already analyzed."
-          items={[
-            { label: "Beginner", text: "Fastest path to a small, demoable project." },
-            { label: "Intermediate", text: "Balanced scope for a polished hackathon build." },
-            { label: "Advanced", text: "More architecture, integrations, and technical depth." },
-          ]}
-        />
 
         <section className="panel relative mb-6 overflow-hidden p-6 sm:p-8">
           <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/15 blur-3xl" />
@@ -266,6 +255,26 @@ export function BuildPlanPage() {
           </div>
         </section>
       </main>
+      <OnboardingTour
+        id="build-plan"
+        steps={[
+          {
+            target: "build-plan-difficulty",
+            title: "Choose the next plan scope",
+            body: "Difficulty changes the next regenerated plan, not the current one on screen.",
+          },
+          {
+            target: "build-plan-regenerate",
+            title: "Regenerate a fresh plan",
+            body: "Ask AI for another build idea using the same daily.dev analysis.",
+          },
+          {
+            target: "build-plan-share",
+            title: "Create your share card",
+            body: "Open the public card so you can copy the link or download it as an image.",
+          },
+        ]}
+      />
     </div>
   );
 }

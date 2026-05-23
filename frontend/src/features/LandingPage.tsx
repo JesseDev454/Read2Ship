@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, BrainCircuit, Rocket, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, BrainCircuit, Rocket } from "lucide-react";
 import { Navbar } from "../components/Navbar";
 import { Button } from "../components/Button";
 import { ActionCard } from "../components/ActionCard";
 import { Reveal } from "../components/Reveal";
 import { RotatingTypewriter } from "../components/RotatingTypewriter";
-import { ShareablePlanCard } from "../components/ShareablePlanCard";
-import { sampleAnalysis } from "../data/samplePlan";
 
 const heroTypewriterWords = ["build.", "prototype.", "side project.", "launch.", "portfolio piece."];
 
@@ -15,27 +13,23 @@ export function LandingPage() {
     <div className="min-h-screen overflow-hidden bg-bg-app text-text-primary">
       <Navbar />
       <main>
-        <section className="relative px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <section className="relative px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="animate-background-drift absolute inset-0 bg-grid-pattern bg-[size:28px_28px] opacity-30" />
           <div className="animate-glow-pulse absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
-          <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="lg:-translate-y-8 xl:-translate-y-12">
-              <div className="animate-fade-up mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold text-text-secondary">
-                <Sparkles size={15} className="text-secondary" />
-                Powered by daily.dev API
-              </div>
-              <h1 className="animate-fade-up max-w-3xl text-4xl font-bold leading-tight tracking-tight text-white [animation-delay:120ms] sm:text-5xl lg:text-6xl">
+          <div className="relative mx-auto flex max-w-7xl">
+            <div className="max-w-6xl lg:-translate-y-6 xl:-translate-y-8">
+              <h1 className="animate-fade-up max-w-6xl text-5xl font-bold leading-tight tracking-tight text-white [animation-delay:120ms] sm:text-6xl lg:text-7xl xl:text-8xl">
                 Turn your daily.dev reading into your next{" "}
                 <RotatingTypewriter
                   words={heroTypewriterWords}
                   className="animate-gradient-shimmer bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent"
                 />
               </h1>
-              <p className="animate-fade-up mt-6 max-w-2xl text-base leading-8 text-text-secondary [animation-delay:240ms] sm:text-lg">
+              <p className="animate-fade-up mt-7 max-w-3xl text-lg leading-8 text-text-secondary [animation-delay:240ms] sm:text-xl sm:leading-9">
                 Read2Ship analyzes your daily.dev content and generates practical
                 mini-projects, implementation tasks, and shareable build plans.
               </p>
-              <div className="animate-fade-up mt-9 flex flex-col gap-3 [animation-delay:360ms] sm:flex-row">
+              <div className="animate-fade-up mt-10 flex flex-col gap-3 [animation-delay:360ms] sm:flex-row">
                 <Link to="/connect">
                   <Button icon={<Rocket size={18} />} className="cta-button w-full sm:w-auto">
                     Generate My Plan
@@ -52,14 +46,6 @@ export function LandingPage() {
                 </Link>
               </div>
             </div>
-            <div className="animate-slide-in-right relative [animation-delay:420ms]">
-              <div className="animate-glow-pulse absolute -inset-2 rounded-3xl bg-gradient-to-r from-primary/25 to-secondary/25 blur-2xl" />
-              <div className="landing-card-hover relative mx-auto max-w-[680px] scale-[0.92] sm:scale-95 lg:scale-100">
-                <div className="animate-float-card">
-                  <ShareablePlanCard plan={sampleAnalysis.plan} />
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -73,7 +59,7 @@ export function LandingPage() {
                 </h2>
               </div>
               <Link to="/connect" className="cta-link inline-flex items-center gap-2 text-sm font-semibold text-secondary">
-                Generate Plan <ArrowRight size={16} className="cta-arrow" />
+                Start from your reading <ArrowRight size={16} className="cta-arrow" />
               </Link>
             </Reveal>
             <div className="grid gap-5 md:grid-cols-3">
@@ -113,7 +99,7 @@ export function LandingPage() {
             </p>
             <Link to="/connect" className="mt-8 inline-block">
               <Button icon={<ArrowRight size={18} className="cta-arrow" />} className="cta-button">
-                Generate Your Own
+                Start Your Plan
               </Button>
             </Link>
           </Reveal>

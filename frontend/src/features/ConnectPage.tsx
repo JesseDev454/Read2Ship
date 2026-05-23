@@ -4,10 +4,10 @@ import { ArrowRight, KeyRound, Lock, WandSparkles } from "lucide-react";
 import { Button } from "../components/Button";
 import { EmptyState } from "../components/EmptyState";
 import { ErrorState } from "../components/ErrorState";
-import { GuidanceCard, StepPill } from "../components/GuidanceCard";
 import { Input } from "../components/Input";
 import { LoadingState } from "../components/LoadingState";
 import { Logo } from "../components/Logo";
+import { OnboardingTour } from "../components/OnboardingTour";
 import { analyzeDailyDevToken, ApiRequestError, generatePlan } from "../lib/api";
 import { createFallbackPlan } from "../lib/fallbackPlan";
 import { writeSampleSession, writeSessionAnalysis } from "../lib/session";
@@ -175,32 +175,14 @@ export function ConnectPage() {
             value={token}
             onChange={(event) => setToken(event.target.value)}
             icon={<KeyRound size={18} />}
-            hint="Use your daily.dev API token. Read2Ship only sends it to the backend for this analysis request."
+            data-tour="dailydev-token-input"
           />
           <div className="mt-4 flex items-start gap-2 rounded-lg border border-secondary/20 bg-secondary/10 p-3 text-xs leading-5 text-text-secondary">
             <Lock className="mt-0.5 shrink-0 text-secondary" size={15} />
             <span>Your token is only used to fetch your daily.dev content and is not stored.</span>
           </div>
-          <GuidanceCard
-            className="mt-4"
-            eyebrow="How this works"
-            title="From reading signal to build plan"
-            description="Read2Ship turns your daily.dev activity into a focused project without saving your token."
-            items={[
-              { label: "Analyze", text: "Fetch recent/saved posts and detect recurring themes, tools, and technologies." },
-              { label: "Generate", text: "Ask AI for a practical build plan based on your actual reading patterns." },
-              { label: "Share", text: "Create a public card from the generated plan, not from your private token." },
-            ]}
-          >
-            <div className="flex flex-wrap gap-2">
-              <StepPill index={1} label="Connect" />
-              <StepPill index={2} label="Analyze" />
-              <StepPill index={3} label="Build" />
-              <StepPill index={4} label="Share" />
-            </div>
-          </GuidanceCard>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            <Button type="submit" icon={<WandSparkles size={18} />}>
+            <Button type="submit" icon={<WandSparkles size={18} />} data-tour="analyze-reading-button">
               Analyze My Reading
             </Button>
             <Button type="button" variant="secondary" onClick={startSample}>
@@ -240,6 +222,21 @@ export function ConnectPage() {
           </div>
         </aside>
       </div>
+      <OnboardingTour
+        id="connect"
+        steps={[
+          {
+            target: "dailydev-token-input",
+            title: "Paste your daily.dev token",
+            body: "Read2Ship uses it only for this analysis request. The token is not stored.",
+          },
+          {
+            target: "analyze-reading-button",
+            title: "Analyze your reading",
+            body: "This detects your themes and stack signals, then generates your first build plan.",
+          },
+        ]}
+      />
     </ConnectShell>
   );
 

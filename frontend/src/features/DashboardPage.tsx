@@ -3,7 +3,7 @@ import { ChevronDown, Lightbulb, Rocket, TrendingUp } from "lucide-react";
 import { ArticlePreviewCard } from "../components/ArticlePreviewCard";
 import { Button } from "../components/Button";
 import { EmptyState } from "../components/EmptyState";
-import { GuidanceCard } from "../components/GuidanceCard";
+import { OnboardingTour } from "../components/OnboardingTour";
 import { Sidebar } from "../components/Sidebar";
 import { ThemeScoreCard } from "../components/ThemeScoreCard";
 import { buildOverviewAnalysis } from "../lib/analysisDisplay";
@@ -79,7 +79,7 @@ export function DashboardPage() {
             </div>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2" data-tour="dashboard-themes">
             <section className="card p-6">
               <div className="mb-5 flex items-center justify-between">
                 <h2 className="text-xl font-semibold text-white">Top Reading Themes</h2>
@@ -228,17 +228,7 @@ export function DashboardPage() {
                 <div className="label-code mb-2">Suggested Action</div>
                 <p className="text-sm leading-6 text-white">{overview.recommendation}</p>
               </div>
-              <GuidanceCard
-                className="mt-4"
-                eyebrow="Next step"
-                title="Turn this analysis into a build plan"
-                description="The build plan uses these themes, stack signals, and recent posts to generate a project title, three implementation tasks, recommended stack, and share card."
-                items={[
-                  { label: "Review", text: "Check the themes and detected tech stack for signal quality." },
-                  { label: "Generate", text: "Open the build plan page to turn the analysis into shipping tasks." },
-                ]}
-              />
-              <Link to="/build-plan" className="mt-6 block">
+              <Link to="/build-plan" className="mt-6 block" data-tour="dashboard-generate-plan">
                 <Button className="w-full" icon={<Rocket size={18} />}>
                   Generate Build Plan
                 </Button>
@@ -247,6 +237,21 @@ export function DashboardPage() {
           </section>
         </aside>
       </main>
+      <OnboardingTour
+        id="dashboard"
+        steps={[
+          {
+            target: "dashboard-themes",
+            title: "Your reading signals",
+            body: "These sections show what Read2Ship found from your daily.dev activity.",
+          },
+          {
+            target: "dashboard-generate-plan",
+            title: "Generate the build plan",
+            body: "Turn the analysis into a project plan with tasks, stack, and a share card.",
+          },
+        ]}
+      />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import { BadgeCheck } from "lucide-react";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
 
@@ -23,19 +22,7 @@ export function Navbar() {
           <a className="text-sm text-text-secondary transition hover:text-white" href="/#how">
             How it Works
           </a>
-          <NavLink to="/connect" className={navClass}>
-            Generate Plan
-          </NavLink>
         </nav>
-        <div className="hidden items-center gap-3 md:flex">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-text-secondary">
-            <BadgeCheck size={14} className="text-secondary" />
-            Powered by daily.dev API
-          </span>
-          <Link to="/connect">
-            <Button className="min-h-10 px-4 py-2">Generate</Button>
-          </Link>
-        </div>
         <Link className="md:hidden" to="/connect">
           <Button className="min-h-10 px-4 py-2">Start</Button>
         </Link>
