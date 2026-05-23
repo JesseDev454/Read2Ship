@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, BrainCircuit, Rocket } from "lucide-react";
+import { BookOpen, BrainCircuit, Rocket } from "lucide-react";
 import { Navbar } from "../components/Navbar";
 import { Button } from "../components/Button";
 import { ActionCard } from "../components/ActionCard";
@@ -51,16 +51,13 @@ export function LandingPage() {
 
         <section id="how" className="border-y border-white/10 bg-surface-main px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
-            <Reveal className="mb-10 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+            <Reveal className="mb-10">
               <div>
                 <div className="label-code mb-3">Reading to Shipping</div>
                 <h2 className="text-2xl font-semibold text-white sm:text-3xl">
                   Three steps from saved posts to a real project.
                 </h2>
               </div>
-              <Link to="/connect" className="cta-link inline-flex items-center gap-2 text-sm font-semibold text-secondary">
-                Start from your reading <ArrowRight size={16} className="cta-arrow" />
-              </Link>
             </Reveal>
             <div className="grid gap-5 md:grid-cols-3">
               <Reveal delay={80}>
@@ -91,19 +88,9 @@ export function LandingPage() {
           </div>
         </section>
 
-        <section className="px-4 py-16 text-center sm:px-6 lg:px-8">
-          <Reveal className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-bold text-white">Stop collecting. Start shipping.</h2>
-            <p className="mt-4 text-text-secondary">
-              A focused developer tool for turning what you already read into what you build next.
-            </p>
-            <Link to="/connect" className="mt-8 inline-block">
-              <Button icon={<ArrowRight size={18} className="cta-arrow" />} className="cta-button">
-                Start Your Plan
-              </Button>
-            </Link>
-          </Reveal>
-        </section>
+        <footer className="border-t border-white/10 px-4 py-8 text-center text-xs text-text-tertiary sm:px-6 lg:px-8">
+          © 2026 Read2Ship. All rights reserved.
+        </footer>
       </main>
     </div>
   );
