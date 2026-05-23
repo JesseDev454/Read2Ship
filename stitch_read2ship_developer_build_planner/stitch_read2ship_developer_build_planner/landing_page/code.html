@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Read2Ship - Turn Reading into Building</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#9a5c00",
+                        "surface-container-lowest": "#110c16",
+                        "text-tertiary": "#71717A",
+                        "tertiary": "#ffb86b",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "on-secondary-container": "#00424e",
+                        "surface-main": "#121214",
+                        "primary": "#ddb8ff",
+                        "secondary-fixed": "#acedff",
+                        "on-tertiary-container": "#ffe8d4",
+                        "success": "#22C55E",
+                        "on-secondary-fixed": "#001f26",
+                        "surface-tint": "#ddb8ff",
+                        "on-error": "#690005",
+                        "on-surface": "#eadfee",
+                        "on-secondary": "#003640",
+                        "surface-bright": "#3d3742",
+                        "bg-app": "#0A0A0B",
+                        "error-container": "#93000a",
+                        "on-background": "#eadfee",
+                        "secondary": "#4cd7f6",
+                        "outline-variant": "#4d4354",
+                        "on-primary": "#490080",
+                        "primary-fixed": "#f0dbff",
+                        "inverse-surface": "#eadfee",
+                        "text-primary": "#F5F5F7",
+                        "surface-dim": "#17111b",
+                        "primary-fixed-dim": "#ddb8ff",
+                        "surface-card": "#1A1A1D",
+                        "tertiary-fixed-dim": "#ffb86b",
+                        "surface-container-highest": "#39323e",
+                        "outline": "#988ca0",
+                        "secondary-container": "#03b5d3",
+                        "error": "#EF4444",
+                        "surface-elevated": "#212124",
+                        "border-subtle": "#2D2D30",
+                        "surface-container-low": "#1f1924",
+                        "on-tertiary-fixed": "#2c1700",
+                        "text-secondary": "#A1A1AA",
+                        "surface-variant": "#39323e",
+                        "inverse-primary": "#861fdd",
+                        "on-tertiary-fixed-variant": "#683d00",
+                        "surface-container": "#231d28",
+                        "tertiary-fixed": "#ffdcbc",
+                        "surface-container-high": "#2e2832",
+                        "on-primary-fixed": "#2c0051",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "inverse-on-surface": "#342e39",
+                        "on-primary-container": "#f6e6ff",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#17111b",
+                        "background": "#17111b",
+                        "on-primary-fixed-variant": "#6800b4",
+                        "warning": "#F59E0B",
+                        "on-tertiary": "#492900",
+                        "on-surface-variant": "#cfc2d7",
+                        "primary-container": "#9333ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "unit": "4px",
+                        "xl": "32px",
+                        "container-max": "1200px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "sidebar-width": "260px"
+                    },
+                    "fontFamily": {
+                        "label-code": ["Geist"],
+                        "body-sm": ["Geist"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "body-lg": ["Geist"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "metadata": ["Geist"],
+                        "display": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-code": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "metadata": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "display": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glow-primary { box-shadow: 0 0 40px -10px rgba(147, 51, 234, 0.4); }
+        .glow-secondary { box-shadow: 0 0 40px -10px rgba(76, 215, 246, 0.3); }
+        .bg-grid-pattern { background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 24px 24px; }
+    </style>
+</head>
+<body class="bg-bg-app text-text-primary min-h-screen flex flex-col font-body-sm relative overflow-x-hidden selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky z-50 border-b border-outline-variant bg-bg-app/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<img alt="Read2Ship Logo" class="w-10 h-10 rounded-md" src="data:image/png;base64,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"/>
+<span class="font-display text-headline-md text-primary tracking-tight">Read2Ship</span>
+</div>
+<div class="hidden md:flex gap-6 items-center">
+<!-- Highlight 'Product' since this is a landing page describing the product -->
+<a class="font-body-sm text-body-sm text-primary font-bold border-b-2 border-primary pb-1 hover:text-primary transition-colors hover:scale-95 duration-100" href="#">Product</a>
+<a class="font-body-sm text-body-sm text-text-secondary hover:text-primary transition-colors hover:scale-95 duration-100" href="#">Demo</a>
+<a class="font-body-sm text-body-sm text-text-secondary hover:text-primary transition-colors hover:scale-95 duration-100" href="#">How it Works</a>
+<a class="font-body-sm text-body-sm text-text-secondary hover:text-primary transition-colors hover:scale-95 duration-100" href="#">Generate Plan</a>
+</div>
+<button class="hidden md:block bg-primary-container hover:bg-primary-container/90 text-white px-4 py-2 rounded-lg font-body-sm font-medium transition-all hover:scale-95">
+                Sign Up
+            </button>
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<main class="flex-grow flex flex-col relative z-10 pt-2xl pb-2xl">
+<!-- Decorative Background Elements -->
+<div class="absolute inset-0 z-0 bg-grid-pattern opacity-30 pointer-events-none"></div>
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-container/20 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-gutter w-full relative z-10 flex flex-col items-center text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container border border-border-subtle mb-8">
+<span class="material-symbols-outlined text-tertiary" style="font-size: 16px;">bolt</span>
+<span class="font-label-code text-label-code text-text-secondary">v1.0 now available in Beta</span>
+</div>
+<h1 class="font-display text-headline-lg-mobile md:text-display text-text-primary max-w-3xl mb-6 leading-tight">
+                Turn your daily.dev reading into your next <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">build.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl mb-10">
+                Stop just consuming content. Read2Ship analyzes your reading history to generate personalized, actionable project blueprints tailored to your tech stack and interests.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 mb-20 w-full sm:w-auto">
+<button class="bg-primary-container hover:bg-primary hover:text-bg-app text-white px-8 py-3 rounded-md font-body-sm font-medium transition-all glow-primary flex items-center justify-center gap-2 hover:scale-95 duration-100">
+<span class="material-symbols-outlined" style="font-size: 18px;">auto_awesome</span>
+                    Generate My Plan
+                </button>
+<button class="bg-transparent border border-border-subtle text-text-primary hover:bg-surface-elevated px-8 py-3 rounded-md font-body-sm font-medium transition-all flex items-center justify-center gap-2 hover:scale-95 duration-100">
+<span class="material-symbols-outlined" style="font-size: 18px;">visibility</span>
+                    View Sample Plan
+                </button>
+</div>
+<!-- Elevated Preview Card -->
+<div class="w-full max-w-4xl relative">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-xl blur-lg opacity-50"></div>
+<div class="bg-surface-card border border-border-subtle rounded-xl p-lg relative z-10 shadow-2xl flex flex-col md:flex-row gap-8 text-left">
+<!-- Card Content (Left) -->
+<div class="flex-1 flex flex-col">
+<div class="flex items-start justify-between mb-4">
+<div>
+<span class="font-label-code text-label-code text-secondary mb-2 block">RECOMMENDED PROJECT</span>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-2">AI-Powered Code Review Assistant</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">Based on your recent reading about LLMs, AST parsing, and GitHub Actions.</p>
+</div>
+<div class="bg-surface-container-high p-2 rounded border border-border-subtle shrink-0">
+<span class="material-symbols-outlined text-primary" data-weight="fill">robot_2</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="font-label-code text-label-code bg-primary/10 text-primary px-2 py-1 rounded border border-primary/20">TypeScript</span>
+<span class="font-label-code text-label-code bg-secondary/10 text-secondary px-2 py-1 rounded border border-secondary/20">OpenAI API</span>
+<span class="font-label-code text-label-code bg-surface-container-high text-text-tertiary px-2 py-1 rounded border border-border-subtle">GitHub Apps</span>
+</div>
+<div class="mt-auto grid grid-cols-2 gap-4 border-t border-border-subtle pt-4">
+<div>
+<span class="font-metadata text-metadata text-text-tertiary block mb-1">Difficulty</span>
+<div class="flex items-center gap-1 text-warning">
+<span class="material-symbols-outlined" data-weight="fill" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined" data-weight="fill" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined" data-weight="fill" style="font-size: 16px;">star</span>
+<span class="material-symbols-outlined" data-weight="fill" style="font-size: 16px; opacity: 0.3;">star</span>
+</div>
+</div>
+<div>
+<span class="font-metadata text-metadata text-text-tertiary block mb-1">Estimated Time</span>
+<span class="font-body-sm text-body-sm text-text-primary flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">timer</span>
+                                    12-16 hrs
+                                </span>
+</div>
+</div>
+</div>
+<!-- Task List (Right) -->
+<div class="flex-1 bg-surface-main rounded-lg border border-border-subtle p-4 flex flex-col">
+<span class="font-label-code text-label-code text-text-secondary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 14px;">format_list_bulleted</span>
+                            BUILD PLAN (3 Phases)
+                        </span>
+<div class="space-y-3 flex-grow">
+<div class="flex items-start gap-3 p-2 rounded hover:bg-surface-elevated transition-colors cursor-pointer border border-transparent hover:border-border-subtle">
+<div class="mt-0.5 text-success">
+<span class="material-symbols-outlined" style="font-size: 18px;">check_circle</span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm text-text-primary block line-through opacity-70">Phase 1: Setup GitHub App auth</span>
+<span class="font-metadata text-metadata text-text-tertiary">Completed reading: "OAuth patterns in Node"</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-2 rounded bg-surface-elevated border-l-2 border-primary border border-border-subtle relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+<div class="mt-0.5 text-text-tertiary">
+<span class="material-symbols-outlined" style="font-size: 18px;">radio_button_unchecked</span>
+</div>
+<div class="relative z-10">
+<span class="font-body-sm text-body-sm text-primary font-medium block">Phase 2: Integrate OpenAI API</span>
+<span class="font-metadata text-metadata text-text-secondary">Read suggested docs before starting.</span>
+</div>
+</div>
+<div class="flex items-start gap-3 p-2 rounded hover:bg-surface-elevated transition-colors cursor-pointer border border-transparent hover:border-border-subtle opacity-60">
+<div class="mt-0.5 text-text-tertiary">
+<span class="material-symbols-outlined" style="font-size: 18px;">radio_button_unchecked</span>
+</div>
+<div>
+<span class="font-body-sm text-body-sm text-text-primary block">Phase 3: Webhook event handling</span>
+<span class="font-metadata text-metadata text-text-tertiary">2 articles queued for this context.</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-4 bg-transparent border border-border-subtle text-text-secondary hover:text-text-primary py-2 rounded text-body-sm font-medium transition-colors">
+                            View Full Blueprint
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- How It Works Section -->
+<section class="py-2xl bg-surface-main border-t border-border-subtle relative z-10">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-display text-headline-lg text-text-primary mb-4">From tabs to terminal.</h2>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl mx-auto">A seamless workflow designed for developers who want to apply what they learn immediately.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-8 relative hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 bg-surface-container rounded-lg border border-border-subtle flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary" style="font-size: 24px;">link</span>
+</div>
+<span class="font-label-code text-label-code text-text-tertiary block mb-2">STEP 01</span>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-3">Connect daily.dev</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">Securely link your daily.dev account to allow read access to your bookmarks and reading history.</p>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-8 relative hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 bg-surface-container rounded-lg border border-border-subtle flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" style="font-size: 24px;">troubleshoot</span>
+</div>
+<span class="font-label-code text-label-code text-text-tertiary block mb-2">STEP 02</span>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-3">Analyze Themes</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">Our engine extracts core technologies, architectural patterns, and domains you've been focused on.</p>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-8 relative hover:-translate-y-1 transition-transform duration-300">
+<div class="w-12 h-12 bg-surface-container rounded-lg border border-border-subtle flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-success" style="font-size: 24px;">construction</span>
+</div>
+<span class="font-label-code text-label-code text-text-tertiary block mb-2">STEP 03</span>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-3">Generate Plan</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">Receive structured, multi-phase project blueprints with direct links back to your reading material for context.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-xl bg-surface-container-lowest border-t border-outline-variant relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center px-gutter max-w-container-max mx-auto gap-4">
+<div class="flex items-center gap-2">
+<span class="font-display text-body-lg text-primary">Read2Ship</span>
+</div>
+<div class="font-metadata text-metadata text-tertiary text-center md:text-left">
+                © 2024 Read2Ship. Powered by daily.dev
+            </div>
+<div class="flex gap-6">
+<a class="font-metadata text-metadata text-text-tertiary hover:text-on-surface transition-colors" href="#">Privacy</a>
+<a class="font-metadata text-metadata text-text-tertiary hover:text-on-surface transition-colors" href="#">Terms</a>
+<a class="font-metadata text-metadata text-text-tertiary hover:text-on-surface transition-colors" href="#">API Documentation</a>
+</div>
+</div>
+</footer>
+</body></html>

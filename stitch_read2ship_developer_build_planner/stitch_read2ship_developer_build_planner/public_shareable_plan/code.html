@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jesse's Read2Ship Plan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-container": "#9a5c00",
+                      "surface-container-lowest": "#110c16",
+                      "text-tertiary": "#71717A",
+                      "tertiary": "#ffb86b",
+                      "secondary-fixed-dim": "#4cd7f6",
+                      "on-secondary-container": "#00424e",
+                      "surface-main": "#121214",
+                      "primary": "#ddb8ff",
+                      "secondary-fixed": "#acedff",
+                      "on-tertiary-container": "#ffe8d4",
+                      "success": "#22C55E",
+                      "on-secondary-fixed": "#001f26",
+                      "surface-tint": "#ddb8ff",
+                      "on-error": "#690005",
+                      "on-surface": "#eadfee",
+                      "on-secondary": "#003640",
+                      "surface-bright": "#3d3742",
+                      "bg-app": "#0A0A0B",
+                      "error-container": "#93000a",
+                      "on-background": "#eadfee",
+                      "secondary": "#4cd7f6",
+                      "outline-variant": "#4d4354",
+                      "on-primary": "#490080",
+                      "primary-fixed": "#f0dbff",
+                      "inverse-surface": "#eadfee",
+                      "text-primary": "#F5F5F7",
+                      "surface-dim": "#17111b",
+                      "primary-fixed-dim": "#ddb8ff",
+                      "surface-card": "#1A1A1D",
+                      "tertiary-fixed-dim": "#ffb86b",
+                      "surface-container-highest": "#39323e",
+                      "outline": "#988ca0",
+                      "secondary-container": "#03b5d3",
+                      "error": "#EF4444",
+                      "surface-elevated": "#212124",
+                      "border-subtle": "#2D2D30",
+                      "surface-container-low": "#1f1924",
+                      "on-tertiary-fixed": "#2c1700",
+                      "text-secondary": "#A1A1AA",
+                      "surface-variant": "#39323e",
+                      "inverse-primary": "#861fdd",
+                      "on-tertiary-fixed-variant": "#683d00",
+                      "surface-container": "#231d28",
+                      "tertiary-fixed": "#ffdcbc",
+                      "surface-container-high": "#2e2832",
+                      "on-primary-fixed": "#2c0051",
+                      "on-secondary-fixed-variant": "#004e5c",
+                      "inverse-on-surface": "#342e39",
+                      "on-primary-container": "#f6e6ff",
+                      "on-error-container": "#ffdad6",
+                      "surface": "#17111b",
+                      "background": "#17111b",
+                      "on-primary-fixed-variant": "#6800b4",
+                      "warning": "#F59E0B",
+                      "on-tertiary": "#492900",
+                      "on-surface-variant": "#cfc2d7",
+                      "primary-container": "#9333ea"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "20px",
+                      "md": "16px",
+                      "2xl": "48px",
+                      "unit": "4px",
+                      "xl": "32px",
+                      "container-max": "1200px",
+                      "xs": "4px",
+                      "sm": "8px",
+                      "lg": "24px",
+                      "sidebar-width": "260px"
+              },
+              "fontFamily": {
+                      "label-code": ["Geist"],
+                      "body-sm": ["Geist"],
+                      "headline-lg-mobile": ["Space Grotesk"],
+                      "body-lg": ["Geist"],
+                      "headline-lg": ["Space Grotesk"],
+                      "headline-md": ["Space Grotesk"],
+                      "metadata": ["Geist"],
+                      "display": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "label-code": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "metadata": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+      </style>
+</head>
+<body class="bg-bg-app min-h-screen flex items-center justify-center p-gutter md:p-2xl relative overflow-hidden font-body-sm text-text-primary">
+<!-- Ambient Background Elements -->
+<div class="absolute inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[100px] rounded-full pointer-events-none z-0"></div>
+<main class="w-full max-w-[640px] relative z-10 flex flex-col gap-xl">
+<!-- Premium Share Card -->
+<article class="bg-surface-elevated border border-border-subtle rounded-xl overflow-hidden relative shadow-2xl shadow-black/50">
+<!-- Glass/Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 pointer-events-none"></div>
+<div class="p-lg md:p-xl relative z-10 flex flex-col gap-xl">
+<!-- Card Header -->
+<header class="flex items-center justify-between border-b border-border-subtle pb-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center border border-border-subtle overflow-hidden">
+<span class="font-display text-headline-md text-text-primary">J</span>
+</div>
+<div>
+<h1 class="font-display text-headline-md text-text-primary">Jesse's Read2Ship Plan</h1>
+<p class="font-metadata text-metadata text-text-secondary">Generated today</p>
+</div>
+</div>
+<img alt="Read2Ship Logo" class="w-10 h-10 object-contain drop-shadow-[0_0_8px_rgba(147,51,234,0.5)]" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAFl0lEQVR4AezbW2gcZRQA4HNmc93cbNNNfVBBaJtaqDVZQYKIEB8sRRMffBEUWhSvSdDShyoGI+2LSItmg1CkVFAU+pTWgj7EvCgi6iapSqjQglaF7G5T22yym/vpOUN2m2x2ZnZ3dprszD/MYf75LzNzvsxtB6JBHlOoJdYRao183h+MjoSC0av9wUgiFIxSqKQjMtMfjPwdCkbDem6tsafzIAFLwE/23tjCG/4w1BqNg0bnAPF5BGjhndyLgNW8LPEZ/ZzHfZxEK0huSOcZ84bkLLlzvelsCHh2D1UMtMQOL5XPX+ENHwGEWtMtuauxARCPSO6h1thbYmGUXlbA082xukhV9BvS6AQgbDEa7Pp6yR3p5ER19KyYZMt3HeDAvtiumVr6BRDbsw3wYh1f4p2JWvr5owdjzZn5rwEc2D3VuOyjCwiwrmPmQA+u7/aV0/lTwaltq3NPA/YBlZE/+TUi7FzdQZXXCOyah9lBsUrVpgEbgzF+UGBbqkEtDQUe1a1WmnVAOS0J4J2VOrWwEGCrt/tb4gHppgPOUfI43/fqpEKFtQBb1QMmjklPrX/HZD0XDnGoOT+Bg2KnYQO1I2JFfmNVbzarFDuNaGm/xziKlq7YaYjwEKipIAGx04Dg7oJGq0Egdho/khVggSeD2PEljJUFjvf8MESs1N8DPS9hA0AB2sCToQpQFGyE44BdvwagawPDhk1OQx0HzOkoSriTArT5x1OACtCmgM3hJXIG2szSweEK0CauAtzsgAMPx2Ajw6aP5XB1BloSmXdQgOY+lq0K0JLIvIMCNPexbFWAlkTmHRSguY9lqwK0JDLv4DjgRn4LlH2bp2+/1XFA+4e4ubfgHODmzrtoR6cAbVIqQAVoU8DmcHUGKkCbAjaHO34GbuS3QNm3TR/L4Y4DWh5BiXdQgDb/gApQAeYu0HCPDyRyH2Hd0zNn4ONHa+GFwa16SNmaJrcengBse6MG9j5bnRaRcntvcf6vaA1geg8uKlTUIgQP+tdltKezCoqB6DigfJMrZqyTsKjwlXMH5MgyFwPRccAsx31Hq5L/E1y6MGu4Tx3x3cIvZ9cDitzQ+3EYP2eC+Ezhl7MnAIEAho9bIBZ4T/QGoJyGDiF6B9AhRG8B5oH4yKs10tsyvAcoJDlczvLuWFYlnc3DcUD5JlfMME8nv9aFBEvynG2UVgaAPoMXSLg9OQ54e1ebqMQuT/BPuX3P8c87Lmc7svHBWViYMdBdNcB7gAzWzi/OD3QYX5/yziivPaucDIveAlzBk18fKZHMpY53LJ5ZbbiuEdGcYaubGhzAEzuNtzvhJqesuXCSctkW88yT/fBmJzRAcD1g2+s1UGw8ARQ7voRhDFw8GX0PTKWc7z0vNU6WRDCmIfq+lRW3htn3QDt44kWAgxrdxGG5GYJLJ6PvgfKeN5zH0zaTh83mqzDwndZzuXGKGz/jcO081BeHH05OwyJ/EpRfH9+fmNY/b9lM+MwrYVzQZCPL8/AeAPHmZc2dMfZlEs4cuMYxCRe/StpMkq3I3ysb0QHf/GN7BAhPSYWbY26KYH6abKdIgB/3jNbFZEM6oBT8M9jL1/VvUlZhLMBGP9VNBvpSPdKAL/4ZiJcv+Q4QwL+pRrXMECC4rCWqnzr0F6Zvd2lA6fraxW3/IZQJojxYpErFigABXSOk/V2X6idXqvTFGkCp6Q5v/X0xWXk/n6o/yvomjDt+SGwxtJisau4Jb7+SufN1gNLh8HjD9esjTY/BMrzE8hGp82QQRYnwZbZ4UkyyGWQFlI59gMvdo02na6a1nXxf/AAIpqXeI3FTcvbPaDt6RgKfioVR3oaAqQHycOkJNx3tHmmq479GBxB9wW0jBHSV3x0TXC7pmfOQl8J/GGxUz20ZO7vDTXdJzpK7VXK3AAAA//+ORjH4AAAABklEQVQDANlYN5zmL50uAAAAAElFTkSuQmCC"/>
+</header>
+<!-- Card Content Body -->
+<div class="flex flex-col gap-lg">
+<!-- Direction & Focus -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<span class="font-label-code text-label-code text-text-tertiary">Direction</span>
+<span class="font-body-lg text-body-lg text-primary-fixed">AI Agents + Backend</span>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="font-label-code text-label-code text-text-tertiary">Build Next</span>
+<span class="font-body-lg text-body-lg text-secondary-fixed">AI-Powered Code Review Assistant</span>
+</div>
+</div>
+<!-- Tasks -->
+<div class="flex flex-col gap-sm">
+<span class="font-label-code text-label-code text-text-tertiary mb-xs">Next 3 Tasks</span>
+<div class="flex items-start gap-md bg-surface-container-lowest p-md rounded-lg border border-border-subtle">
+<span class="material-symbols-outlined text-primary mt-[2px] text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm text-text-primary">Set up Node.js/Express server and integrate LangChain SDK for agent orchestration.</span>
+</div>
+<div class="flex items-start gap-md bg-surface-container-lowest p-md rounded-lg border border-border-subtle">
+<span class="material-symbols-outlined text-text-tertiary mt-[2px] text-[18px]">radio_button_unchecked</span>
+<span class="font-body-sm text-body-sm text-text-primary">Implement GitHub App authentication (OAuth) and configure webhook listeners for PR events.</span>
+</div>
+<div class="flex items-start gap-md bg-surface-container-lowest p-md rounded-lg border border-border-subtle">
+<span class="material-symbols-outlined text-text-tertiary mt-[2px] text-[18px]">radio_button_unchecked</span>
+<span class="font-body-sm text-body-sm text-text-primary">Develop unified prompt pipeline to analyze diffs and suggest refactors using OpenAI models.</span>
+</div>
+</div>
+<!-- Tech Stack -->
+<div class="flex flex-col gap-sm">
+<span class="font-label-code text-label-code text-text-tertiary mb-xs">Stack</span>
+<div class="flex flex-wrap gap-sm">
+<span class="font-label-code text-label-code bg-primary-container/20 text-primary-fixed border border-primary-container/30 px-3 py-1 rounded-full">Node.js</span>
+<span class="font-label-code text-label-code bg-primary-container/20 text-primary-fixed border border-primary-container/30 px-3 py-1 rounded-full">Express</span>
+<span class="font-label-code text-label-code bg-secondary-container/20 text-secondary-fixed border border-secondary-container/30 px-3 py-1 rounded-full">LangChain</span>
+<span class="font-label-code text-label-code bg-secondary-container/20 text-secondary-fixed border border-secondary-container/30 px-3 py-1 rounded-full">OpenAI</span>
+<span class="font-label-code text-label-code bg-surface-container-highest text-text-primary border border-border-subtle px-3 py-1 rounded-full">GitHub API</span>
+</div>
+</div>
+</div>
+<!-- Card Footer / Badge -->
+<footer class="mt-md pt-md border-t border-border-subtle flex items-center justify-between">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-text-tertiary text-[16px]">bolt</span>
+<span class="font-metadata text-metadata text-text-tertiary">Powered by daily.dev</span>
+</div>
+<span class="font-label-code text-label-code text-text-tertiary">read2ship.dev/p/jesse123</span>
+</footer>
+</div>
+</article>
+<!-- Action Buttons Container -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-md">
+<button class="w-full sm:w-auto flex items-center justify-center gap-sm bg-transparent border border-border-subtle text-text-primary font-body-sm text-body-sm px-lg py-3 rounded-lg hover:bg-surface-elevated active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px]">link</span>
+                Copy Link
+            </button>
+<button class="w-full sm:w-auto flex items-center justify-center gap-sm bg-transparent border border-border-subtle text-text-primary font-body-sm text-body-sm px-lg py-3 rounded-lg hover:bg-surface-elevated active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                Download Card
+            </button>
+<button class="w-full sm:w-auto flex items-center justify-center gap-sm bg-primary text-on-primary font-body-sm text-body-sm px-lg py-3 rounded-lg hover:brightness-110 shadow-[0_0_15px_rgba(147,51,234,0.3)] active:scale-[0.98] transition-all font-medium">
+<span class="material-symbols-outlined text-[18px]">magic_button</span>
+                Generate Your Own
+            </button>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Read2Ship - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#9a5c00",
+                        "surface-container-lowest": "#110c16",
+                        "text-tertiary": "#71717A",
+                        "tertiary": "#ffb86b",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "on-secondary-container": "#00424e",
+                        "surface-main": "#121214",
+                        "primary": "#ddb8ff",
+                        "secondary-fixed": "#acedff",
+                        "on-tertiary-container": "#ffe8d4",
+                        "success": "#22C55E",
+                        "on-secondary-fixed": "#001f26",
+                        "surface-tint": "#ddb8ff",
+                        "on-error": "#690005",
+                        "on-surface": "#eadfee",
+                        "on-secondary": "#003640",
+                        "surface-bright": "#3d3742",
+                        "bg-app": "#0A0A0B",
+                        "error-container": "#93000a",
+                        "on-background": "#eadfee",
+                        "secondary": "#4cd7f6",
+                        "outline-variant": "#4d4354",
+                        "on-primary": "#490080",
+                        "primary-fixed": "#f0dbff",
+                        "inverse-surface": "#eadfee",
+                        "text-primary": "#F5F5F7",
+                        "surface-dim": "#17111b",
+                        "primary-fixed-dim": "#ddb8ff",
+                        "surface-card": "#1A1A1D",
+                        "tertiary-fixed-dim": "#ffb86b",
+                        "surface-container-highest": "#39323e",
+                        "outline": "#988ca0",
+                        "secondary-container": "#03b5d3",
+                        "error": "#EF4444",
+                        "surface-elevated": "#212124",
+                        "border-subtle": "#2D2D30",
+                        "surface-container-low": "#1f1924",
+                        "on-tertiary-fixed": "#2c1700",
+                        "text-secondary": "#A1A1AA",
+                        "surface-variant": "#39323e",
+                        "inverse-primary": "#861fdd",
+                        "on-tertiary-fixed-variant": "#683d00",
+                        "surface-container": "#231d28",
+                        "tertiary-fixed": "#ffdcbc",
+                        "surface-container-high": "#2e2832",
+                        "on-primary-fixed": "#2c0051",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "inverse-on-surface": "#342e39",
+                        "on-primary-container": "#f6e6ff",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#17111b",
+                        "background": "#17111b",
+                        "on-primary-fixed-variant": "#6800b4",
+                        "warning": "#F59E0B",
+                        "on-tertiary": "#492900",
+                        "on-surface-variant": "#cfc2d7",
+                        "primary-container": "#9333ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "unit": "4px",
+                        "xl": "32px",
+                        "container-max": "1200px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "sidebar-width": "260px"
+                    },
+                    "fontFamily": {
+                        "label-code": ["Geist", "monospace"],
+                        "body-sm": ["Geist", "sans-serif"],
+                        "headline-lg-mobile": ["Space Grotesk", "sans-serif"],
+                        "body-lg": ["Geist", "sans-serif"],
+                        "headline-lg": ["Space Grotesk", "sans-serif"],
+                        "headline-md": ["Space Grotesk", "sans-serif"],
+                        "metadata": ["Geist", "sans-serif"],
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "label-code": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "metadata": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "display": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .glass-panel {
+                @apply bg-surface-card/80 backdrop-blur-md border border-border-subtle shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+            }
+            .tech-chip {
+                @apply font-label-code text-label-code px-3 py-1.5 rounded-full border border-border-subtle bg-surface-elevated text-text-secondary hover:text-primary hover:border-primary/50 transition-colors cursor-default;
+            }
+        }
+        
+        /* Temporary font injection for Geist since it's not a standard Google Font yet in this context, falling back to a similar sys font */
+        @font-face {
+            font-family: 'Geist';
+            src: local('system-ui'), local('-apple-system'), local('BlinkMacSystemFont'), local('Segoe UI'), local('Roboto');
+        }
+    </style>
+</head>
+<body class="bg-bg-app text-text-primary min-h-screen flex antialiased">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-screen w-sidebar-width fixed left-0 top-0 bg-surface-main dark:bg-surface-main border-r border-outline-variant py-lg z-50">
+<div class="px-gutter mb-xl flex items-center gap-sm">
+<img alt="Read2Ship Logo" class="w-8 h-8 rounded-md bg-primary-container object-cover" src="data:image/png;base64,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"/>
+<div>
+<h1 class="font-display text-headline-md text-primary tracking-tight">Read2Ship</h1>
+<span class="font-metadata text-metadata text-text-tertiary">v1.0.4-alpha</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-1 px-4">
+<span class="font-label-code text-label-code text-text-tertiary px-4 mb-2 uppercase tracking-wider">Nav</span>
+<a class="bg-secondary-container/10 text-secondary border-l-4 border-secondary px-4 py-3 flex items-center gap-3 font-label-code text-label-code hover:bg-surface-container-high transition-all active:scale-[0.98] duration-150 rounded-r-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+                Overview
+            </a>
+<a class="text-text-secondary px-4 py-3 flex items-center gap-3 font-label-code text-label-code hover:bg-surface-container-high transition-all active:scale-[0.98] duration-150 rounded-r-md border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+                Reading Themes
+            </a>
+<a class="text-text-secondary px-4 py-3 flex items-center gap-3 font-label-code text-label-code hover:bg-surface-container-high transition-all active:scale-[0.98] duration-150 rounded-r-md border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined">construction</span>
+                Build Plan
+            </a>
+<a class="text-text-secondary px-4 py-3 flex items-center gap-3 font-label-code text-label-code hover:bg-surface-container-high transition-all active:scale-[0.98] duration-150 rounded-r-md border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined">share</span>
+                Share Card
+            </a>
+<a class="text-text-secondary px-4 py-3 flex items-center gap-3 font-label-code text-label-code hover:bg-surface-container-high transition-all active:scale-[0.98] duration-150 rounded-r-md border-l-4 border-transparent" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</div>
+<div class="px-gutter mt-auto">
+<button class="w-full bg-surface-elevated border border-border-subtle text-text-primary hover:text-primary font-body-sm text-body-sm py-2 px-4 rounded-md transition-all active:scale-95 flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Analysis
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-[260px] min-h-screen relative flex flex-col">
+<!-- Top App Bar (Mobile Only) -->
+<header class="md:hidden flex justify-between items-center px-gutter py-4 bg-bg-app sticky top-0 z-40 border-b border-outline-variant">
+<div class="flex items-center gap-2">
+<img alt="Read2Ship Logo" class="w-6 h-6 rounded-md" src="data:image/png;base64,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"/>
+<h1 class="font-display text-headline-md text-primary tracking-tight">Read2Ship</h1>
+</div>
+<button class="text-text-secondary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<div class="p-gutter md:p-xl flex-1 max-w-container-max mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-lg pb-32">
+<!-- Left Column: Profile & Themes (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<!-- Profile Header Card -->
+<div class="glass-panel rounded-lg p-lg flex flex-col sm:flex-row gap-lg items-start sm:items-center relative overflow-hidden group">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary-container/10 rounded-full blur-3xl group-hover:bg-primary-container/20 transition-all duration-700"></div>
+<div class="w-20 h-20 rounded-full bg-surface-elevated border border-border-subtle flex items-center justify-center overflow-hidden shrink-0 z-10">
+<img alt="Jesse Profile" class="w-full h-full object-cover" data-alt="A close up portrait of a young male software developer with a neutral expression. He is wearing a simple dark t-shirt. The lighting is moody and cinematic, highlighting his face against a dark background, fitting a sleek, modern tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYUE4MLaFN6xG-pTvOczfybHfyzbmfw1qqf_CFDhyPm805tKVdEyblgDLEA9KzOt6-7gbl3TXw0Qn8qCPAfO0xOt9ATjM2qwUglLNzFQBK--0V-BXYmJ5f-DJ6hvIYRVfR3yg_fSQgLt6OGtArYgmB3L16Q3RO-M4HrlKEgquwKakd5wJ7CN7WazAAF_25xkmBJ_chSyA8YDhlX_eRnRvQB6XdfjVG3BPiDMhQHCvrDkciycLRJRdNVLTAL8Rtv7hP__tqvMH0e9A"/>
+</div>
+<div class="z-10 flex-1">
+<h2 class="font-headline-lg text-headline-lg text-text-primary mb-1">Jesse</h2>
+<p class="font-body-sm text-body-sm text-text-secondary mb-4">@jessedev454 • Reading since Oct 2023</p>
+<div class="flex flex-wrap gap-2">
+<span class="tech-chip">TypeScript</span>
+<span class="tech-chip">Node.js</span>
+<span class="tech-chip">React</span>
+<span class="tech-chip">GraphQL</span>
+<span class="tech-chip text-primary border-primary/30 bg-primary/5">+3 more</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid: Themes & Stats -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Top Themes -->
+<div class="bg-surface-card rounded-lg border border-border-subtle p-lg flex flex-col h-full">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-md text-headline-md">Top Reading Themes</h3>
+<span class="material-symbols-outlined text-text-secondary text-sm">troubleshoot</span>
+</div>
+<div class="space-y-4 flex-1 mt-sm">
+<!-- Theme Item -->
+<div class="group">
+<div class="flex justify-between font-label-code text-label-code mb-2">
+<span class="text-text-primary">AI Agents</span>
+<span class="text-secondary">86%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-[86%] shadow-[0_0_10px_rgba(76,215,246,0.5)]"></div>
+</div>
+</div>
+<!-- Theme Item -->
+<div class="group">
+<div class="flex justify-between font-label-code text-label-code mb-2">
+<span class="text-text-primary">Backend Architecture</span>
+<span class="text-primary">74%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full w-[74%] shadow-[0_0_10px_rgba(221,184,255,0.4)]"></div>
+</div>
+</div>
+<!-- Theme Item -->
+<div class="group">
+<div class="flex justify-between font-label-code text-label-code mb-2">
+<span class="text-text-primary">System Design</span>
+<span class="text-tertiary">62%</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary h-1.5 rounded-full w-[62%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Activity Heatmap Placeholder -->
+<div class="bg-surface-card rounded-lg border border-border-subtle p-lg flex flex-col h-full relative overflow-hidden">
+<div class="flex justify-between items-center mb-md z-10">
+<h3 class="font-headline-md text-headline-md">Reading Intensity</h3>
+<span class="font-label-code text-label-code text-text-secondary">Last 30 Days</span>
+</div>
+<div class="flex-1 flex items-end gap-1 opacity-80 z-10 pt-8">
+<!-- Simple pure CSS bar chart representation -->
+<div class="flex-1 bg-surface-container-highest rounded-t-sm h-[30%] hover:bg-primary/50 transition-colors"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-sm h-[45%] hover:bg-primary/50 transition-colors"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-sm h-[20%] hover:bg-primary/50 transition-colors"></div>
+<div class="flex-1 bg-primary/40 rounded-t-sm h-[70%] hover:bg-primary/60 transition-colors border-t border-primary"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-sm h-[50%] hover:bg-primary/50 transition-colors"></div>
+<div class="flex-1 bg-primary/70 rounded-t-sm h-[90%] hover:bg-primary/80 transition-colors border-t border-primary"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-sm h-[40%] hover:bg-primary/50 transition-colors"></div>
+</div>
+<!-- Grid overlay pattern -->
+<div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none opacity-50"></div>
+</div>
+</div>
+<!-- Recent Posts -->
+<div class="bg-surface-main border border-border-subtle rounded-lg p-md mt-md">
+<h3 class="font-headline-md text-headline-md px-2 mb-md">Recent Posts Analyzed</h3>
+<div class="flex flex-col gap-2">
+<!-- Post Item -->
+<div class="p-3 hover:bg-surface-container-low rounded-md transition-colors border border-transparent hover:border-border-subtle flex gap-4 items-start cursor-pointer group">
+<div class="mt-1 text-text-tertiary group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-sm">article</span>
+</div>
+<div class="flex-1">
+<h4 class="font-body-lg text-body-lg text-text-primary group-hover:text-white transition-colors">Building Autonomous Agents with LangChain</h4>
+<div class="flex items-center gap-3 mt-1">
+<span class="font-metadata text-metadata text-text-tertiary">daily.dev</span>
+<span class="w-1 h-1 rounded-full bg-border-subtle"></span>
+<span class="font-metadata text-metadata text-text-tertiary">2 hrs ago</span>
+</div>
+</div>
+</div>
+<!-- Post Item -->
+<div class="p-3 hover:bg-surface-container-low rounded-md transition-colors border border-transparent hover:border-border-subtle flex gap-4 items-start cursor-pointer group">
+<div class="mt-1 text-text-tertiary group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">article</span>
+</div>
+<div class="flex-1">
+<h4 class="font-body-lg text-body-lg text-text-primary group-hover:text-white transition-colors">The State of Serverless Databases in 2024</h4>
+<div class="flex items-center gap-3 mt-1">
+<span class="font-metadata text-metadata text-text-tertiary">Hacker News</span>
+<span class="w-1 h-1 rounded-full bg-border-subtle"></span>
+<span class="font-metadata text-metadata text-text-tertiary">1 day ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Direction & Actions (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-lg">
+<!-- AI Direction Card -->
+<div class="bg-surface-elevated border border-primary/20 rounded-lg p-lg relative overflow-hidden shadow-[0_0_40px_rgba(147,51,234,0.05)]">
+<div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-6xl text-primary">psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+                        Developer Direction
+                    </h3>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed mb-6">
+                        Based on recent reading patterns, Jesse is heavily pivoting towards <strong class="text-text-primary font-medium">AI Agent orchestration</strong> and <strong class="text-text-primary font-medium">scalable backend infrastructure</strong>. The focus suggests preparation for building full-stack AI applications rather than simple wrappers.
+                    </p>
+<div class="space-y-3">
+<h4 class="font-label-code text-label-code text-text-tertiary uppercase">Suggested Action</h4>
+<div class="bg-surface-container-highest p-3 rounded border border-border-subtle flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-sm mt-0.5">lightbulb</span>
+<span class="font-body-sm text-body-sm text-text-primary">Recommend building a custom RAG pipeline project to solidify recent readings on vector databases.</span>
+</div>
+</div>
+</div>
+<!-- Generate Plan Button (Fixed bottom on mobile, sticky on desktop) -->
+<div class="fixed bottom-0 left-0 right-0 p-gutter bg-surface-main/90 backdrop-blur-md border-t border-border-subtle md:sticky md:top-lg md:bg-transparent md:backdrop-blur-none md:border-none md:p-0 z-40">
+<button class="w-full bg-primary-container text-white font-headline-md text-headline-md py-4 rounded-lg shadow-[0_0_20px_rgba(147,51,234,0.3)] hover:bg-primary-container/90 hover:shadow-[0_0_30px_rgba(147,51,234,0.5)] transition-all active:scale-[0.98] flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">rocket_launch</span>
+                        Generate Build Plan
+                    </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

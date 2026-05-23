@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Generated Build Plan - Read2Ship</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#9a5c00",
+                        "surface-container-lowest": "#110c16",
+                        "text-tertiary": "#71717A",
+                        "tertiary": "#ffb86b",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "on-secondary-container": "#00424e",
+                        "surface-main": "#121214",
+                        "primary": "#ddb8ff",
+                        "secondary-fixed": "#acedff",
+                        "on-tertiary-container": "#ffe8d4",
+                        "success": "#22C55E",
+                        "on-secondary-fixed": "#001f26",
+                        "surface-tint": "#ddb8ff",
+                        "on-error": "#690005",
+                        "on-surface": "#eadfee",
+                        "on-secondary": "#003640",
+                        "surface-bright": "#3d3742",
+                        "bg-app": "#0A0A0B",
+                        "error-container": "#93000a",
+                        "on-background": "#eadfee",
+                        "secondary": "#4cd7f6",
+                        "outline-variant": "#4d4354",
+                        "on-primary": "#490080",
+                        "primary-fixed": "#f0dbff",
+                        "inverse-surface": "#eadfee",
+                        "text-primary": "#F5F5F7",
+                        "surface-dim": "#17111b",
+                        "primary-fixed-dim": "#ddb8ff",
+                        "surface-card": "#1A1A1D",
+                        "tertiary-fixed-dim": "#ffb86b",
+                        "surface-container-highest": "#39323e",
+                        "outline": "#988ca0",
+                        "secondary-container": "#03b5d3",
+                        "error": "#EF4444",
+                        "surface-elevated": "#212124",
+                        "border-subtle": "#2D2D30",
+                        "surface-container-low": "#1f1924",
+                        "on-tertiary-fixed": "#2c1700",
+                        "text-secondary": "#A1A1AA",
+                        "surface-variant": "#39323e",
+                        "inverse-primary": "#861fdd",
+                        "on-tertiary-fixed-variant": "#683d00",
+                        "surface-container": "#231d28",
+                        "tertiary-fixed": "#ffdcbc",
+                        "surface-container-high": "#2e2832",
+                        "on-primary-fixed": "#2c0051",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "inverse-on-surface": "#342e39",
+                        "on-primary-container": "#f6e6ff",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#17111b",
+                        "background": "#17111b",
+                        "on-primary-fixed-variant": "#6800b4",
+                        "warning": "#F59E0B",
+                        "on-tertiary": "#492900",
+                        "on-surface-variant": "#cfc2d7",
+                        "primary-container": "#9333ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "20px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "unit": "4px",
+                        "xl": "32px",
+                        "container-max": "1200px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "sidebar-width": "260px"
+                    },
+                    "fontFamily": {
+                        "label-code": ["Geist"],
+                        "body-sm": ["Geist"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "body-lg": ["Geist"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-md": ["Space Grotesk"],
+                        "metadata": ["Geist"],
+                        "display": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-code": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "metadata": ["12px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "display": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-surface-main text-text-primary min-h-screen flex flex-col md:flex-row font-body-sm font-body-sm selection:bg-primary-container selection:text-text-primary">
+<!-- Mobile Nav Header -->
+<header class="md:hidden sticky top-0 z-50 bg-surface-main/80 backdrop-blur-md border-b border-outline-variant px-gutter py-4 flex justify-between items-center w-full">
+<div class="flex items-center gap-3">
+<img alt="Read2Ship Logo" class="w-8 h-8 rounded-md" src="data:image/png;base64,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"/>
+<span class="font-display text-headline-md text-primary font-display text-headline-md">Read2Ship</span>
+</div>
+<button class="text-text-secondary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- SideNavBar (Desktop) -->
+<nav class="hidden md:flex flex-col h-screen w-sidebar-width fixed left-0 top-0 bg-surface-main border-r border-outline-variant py-lg z-40">
+<div class="px-gutter mb-xl flex items-center gap-3">
+<img alt="Read2Ship Logo" class="w-10 h-10 rounded-md" src="data:image/png;base64,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"/>
+<div>
+<h1 class="font-display text-headline-md text-primary font-display text-headline-md">Read2Ship</h1>
+<span class="font-metadata text-metadata text-text-tertiary font-metadata text-metadata">v1.0.4-alpha</span>
+</div>
+</div>
+<button class="mx-gutter mb-xl bg-primary-container text-text-primary font-label-code text-label-code font-label-code text-label-code py-3 px-4 rounded-md flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined icon-fill">add</span>
+            New Analysis
+        </button>
+<ul class="flex flex-col gap-1 font-label-code text-label-code font-label-code text-label-code w-full">
+<li>
+<a class="text-text-secondary px-4 py-3 flex items-center gap-3 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Overview
+                </a>
+</li>
+<li>
+<a class="text-text-secondary px-4 py-3 flex items-center gap-3 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+                    Reading Themes
+                </a>
+</li>
+<li>
+<a class="bg-secondary-container/10 text-secondary border-l-4 border-secondary px-4 py-3 flex items-center gap-3 active:scale-[0.98] duration-150" href="#">
+<span class="material-symbols-outlined icon-fill">construction</span>
+                    Build Plan
+                </a>
+</li>
+<li>
+<a class="text-text-secondary px-4 py-3 flex items-center gap-3 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+                    Share Card
+                </a>
+</li>
+<li class="mt-auto">
+<a class="text-text-secondary px-4 py-3 flex items-center gap-3 hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 md:ml-sidebar-width p-gutter md:p-xl max-w-container-max w-full mx-auto pb-2xl">
+<!-- Header Actions -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-xl gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg font-headline-lg-mobile text-headline-lg-mobile text-text-primary tracking-tight">Generated Build Plan</h2>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1 font-body-sm text-body-sm flex items-center flex-wrap gap-2">
+    Based on your recent reading themes.
+    <span class="inline-flex items-center gap-1 bg-surface-elevated border border-border-subtle rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wider text-text-secondary font-medium">
+<span class="material-symbols-outlined text-[12px] text-tertiary">bolt</span>
+        Powered by daily.dev API
+    </span>
+</p>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-4 py-2 rounded-md border border-outline-variant text-text-primary font-label-code text-label-code hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-base">refresh</span>
+                    Regenerate
+                </button>
+<button class="flex-1 sm:flex-none px-4 py-2 rounded-md bg-secondary-container/10 text-secondary border border-secondary/30 font-label-code text-label-code hover:bg-secondary-container/20 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-base">share</span>
+                    Create Share Card
+                </button>
+</div>
+</div>
+<!-- Hero Card: The Build Plan -->
+<div class="bg-surface-card border border-border-subtle rounded-xl p-md md:p-lg mb-xl shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none transition-opacity duration-500 opacity-50 group-hover:opacity-100"></div>
+<div class="flex flex-col md:flex-row justify-between items-start gap-lg relative z-10">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl icon-fill">rocket_launch</span>
+<h3 class="font-headline-md text-headline-md text-primary font-headline-md text-headline-md">Your next build: AI-Powered Code Review Assistant</h3>
+</div>
+<p class="font-body-lg text-body-lg text-text-secondary mb-6 font-body-lg text-body-lg max-w-3xl">
+                        A GitHub App that automatically analyzes pull requests using an LLM to identify potential bugs, suggest performance improvements, and enforce coding standards before human review.
+                    </p>
+<div class="flex flex-wrap gap-4 mb-6">
+<div class="flex items-center gap-2 bg-surface-main border border-border-subtle rounded-md px-3 py-1.5">
+<span class="material-symbols-outlined text-warning text-sm">signal_cellular_alt</span>
+<span class="font-label-code text-label-code text-text-primary font-label-code text-label-code">Intermediate</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-main border border-border-subtle rounded-md px-3 py-1.5">
+<span class="material-symbols-outlined text-secondary text-sm">schedule</span>
+<span class="font-label-code text-label-code text-text-primary font-label-code text-label-code">2-3 days</span>
+</div>
+</div>
+<div class="mb-2">
+<span class="font-label-code text-label-code text-text-tertiary mb-2 block font-label-code text-label-code">RECOMMENDED STACK</span>
+<div class="flex flex-wrap gap-2">
+<span class="font-label-code text-label-code bg-primary/10 text-primary border border-primary/20 rounded px-2 py-1 font-label-code text-label-code">Node.js</span>
+<span class="font-label-code text-label-code bg-secondary/10 text-secondary border border-secondary/20 rounded px-2 py-1 font-label-code text-label-code">TypeScript</span>
+<span class="font-label-code text-label-code bg-surface-main text-text-primary border border-border-subtle rounded px-2 py-1 font-label-code text-label-code">Probot</span>
+<span class="font-label-code text-label-code bg-surface-main text-text-primary border border-border-subtle rounded px-2 py-1 font-label-code text-label-code">OpenAI API</span>
+</div>
+</div>
+</div>
+<div class="flex-shrink-0 self-start">
+<button class="px-4 py-2 rounded-md bg-surface-main border border-border-subtle text-text-primary font-label-code text-label-code hover:bg-surface-container-high transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-base">content_copy</span>
+                        Copy Plan
+                    </button>
+</div>
+</div>
+</div>
+<!-- Task Grid -->
+<div class="mb-xl">
+<h4 class="font-headline-md text-headline-md text-text-primary mb-md font-headline-md text-headline-md">Execution Plan</h4>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Task 1 -->
+<div class="bg-surface-elevated border border-border-subtle rounded-lg p-4 hover:border-outline transition-colors group relative flex flex-col h-full">
+<div class="flex justify-between items-center mb-3 pb-3 border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">adjust</span>
+<span class="font-label-code text-label-code text-text-primary">#01</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-surface-main text-text-secondary border border-border-subtle rounded px-2 py-0.5 font-metadata flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 2.5h
+            </span>
+</div>
+</div>
+<h5 class="font-body-lg text-body-lg font-medium text-text-primary mb-2">Create webhook endpoint</h5>
+<p class="font-body-sm text-body-sm text-text-secondary mb-4 flex-grow">Set up an Express server or serverless function to listen for GitHub PR events (`pull_request.opened`, `pull_request.synchronize`).</p>
+<div class="bg-surface-main rounded p-3 border border-border-subtle/50 mt-auto">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-[14px]">output</span>
+<span class="font-label-code text-label-code text-primary uppercase tracking-wider text-[10px]">Deliverable</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">POST /webhook endpoint with HMAC validation</span>
+</div>
+</div>
+<!-- Task 2 -->
+<div class="bg-surface-elevated border border-border-subtle rounded-lg p-4 hover:border-outline transition-colors group relative flex flex-col h-full">
+<div class="flex justify-between items-center mb-3 pb-3 border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">adjust</span>
+<span class="font-label-code text-label-code text-text-primary">#02</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-surface-main text-text-secondary border border-border-subtle rounded px-2 py-0.5 font-metadata flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 4.0h
+            </span>
+</div>
+</div>
+<h5 class="font-body-lg text-body-lg font-medium text-text-primary mb-2">Analyze with AI</h5>
+<p class="font-body-sm text-body-sm text-text-secondary mb-4 flex-grow">Extract PR diffs using the GitHub API, chunk the data if necessary, and send it to an LLM with a strict system prompt for code review.</p>
+<div class="bg-surface-main rounded p-3 border border-border-subtle/50 mt-auto">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary text-[14px]">output</span>
+<span class="font-label-code text-label-code text-secondary uppercase tracking-wider text-[10px]">Deliverable</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Prompt-engineered LLM integration returning structured JSON</span>
+</div>
+</div>
+<!-- Task 3 -->
+<div class="bg-surface-elevated border border-border-subtle rounded-lg p-4 hover:border-outline transition-colors group relative flex flex-col h-full">
+<div class="flex justify-between items-center mb-3 pb-3 border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-success text-[18px]">adjust</span>
+<span class="font-label-code text-label-code text-text-primary">#03</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="bg-surface-main text-text-secondary border border-border-subtle rounded px-2 py-0.5 font-metadata flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 2.0h
+            </span>
+</div>
+</div>
+<h5 class="font-body-lg text-body-lg font-medium text-text-primary mb-2">Generate summary</h5>
+<p class="font-body-sm text-body-sm text-text-secondary mb-4 flex-grow">Format the LLM response into markdown and post it back to the PR as a comment, highlighting critical issues vs. suggestions.</p>
+<div class="bg-surface-main rounded p-3 border border-border-subtle/50 mt-auto">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-success text-[14px]">output</span>
+<span class="font-label-code text-label-code text-success uppercase tracking-wider text-[10px]">Deliverable</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Automated PR comment with formatted markdown review</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bonus Feature Card -->
+<div class="bg-surface-main border border-border-subtle border-dashed rounded-lg p-md mb-2xl flex items-center justify-between hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-elevated flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-text-tertiary group-hover:text-primary transition-colors">star</span>
+</div>
+<div>
+<h6 class="font-body-sm text-body-sm font-medium text-text-primary font-body-sm text-body-sm">Bonus: Auto-Fix Suggestions</h6>
+<p class="font-metadata text-metadata text-text-secondary font-metadata text-metadata">Use the GitHub Checks API to provide clickable "Commit suggestion" buttons for simple fixes.</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-tertiary group-hover:text-primary transition-colors transform group-hover:translate-x-1 duration-200">arrow_forward</span>
+</div>
+<!-- Inspiration Section -->
+<div>
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-text-tertiary">local_library</span>
+<h4 class="font-body-lg text-body-lg font-medium text-text-primary font-body-lg text-body-lg">Inspired by your daily.dev reads</h4>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<!-- Article Card 1 -->
+<a class="bg-surface-card border border-border-subtle rounded-lg p-3 flex gap-4 hover:border-outline transition-colors group relative" href="#">
+<div class="w-16 h-16 rounded bg-surface-main flex-shrink-0 bg-cover bg-center border border-border-subtle" data-alt="A macro shot of lines of code on a dark computer screen, glowing with green and blue syntax highlighting in a dark room. The lighting is moody and cinematic, emphasizing the technological and development theme. The style is modern, technical, and slightly cyberpunk, fitting a high-end IDE aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCv-PGyLHvVx5rfJ7RLusibbQk8fColvb_m7cYIadkthfWuowlg-yrtK-O_YX-7S9QTo3Q0mEGlsdh9n7-Gps9ce_TjTzuupO11ESaPgQlkBExE5uTF2i0GzecoBVp2YR1Vydp0GDgEsG7ntIYJYtcHJu3ASLVEnSwokAQ0zmYAQSPs6J0pAD4DDCVauTPrVUw6XbFZRtRVurFfF6nXAdfNlDg_YheLYMk-PUkwD0Cm4pjTg9UNHvkPvQbmBBwvOPwaUMogmKe5Xws');"></div>
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex justify-between items-start gap-2">
+<h6 class="font-body-sm text-body-sm text-text-primary font-medium line-clamp-2 mb-1 group-hover:text-primary transition-colors font-body-sm text-body-sm">Building Next-Gen GitHub Apps with Probot and Node.js</h6>
+<span class="font-label-code text-label-code bg-primary/10 text-primary border border-primary/20 px-2 py-0.5 rounded whitespace-nowrap text-[10px]">Informs Task #01</span>
+</div>
+<span class="font-metadata text-metadata text-text-tertiary font-metadata text-metadata">3 days ago • by Jane Developer</span>
+</div>
+</a>
+<!-- Article Card 2 -->
+<a class="bg-surface-card border border-border-subtle rounded-lg p-3 flex gap-4 hover:border-outline transition-colors group relative" href="#">
+<div class="w-16 h-16 rounded bg-surface-main flex-shrink-0 bg-cover bg-center border border-border-subtle" data-alt="An abstract visualization of artificial intelligence, featuring glowing purple and cyan neural network nodes connecting against a deep black background. The image has a futuristic, high-tech vibe with soft, glowing tonal layers. The aesthetic perfectly matches a modern, technical dark-mode design system." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDSBieDdIeolD9HhTVAmpqdEd1-iAGeLK9N2kv1Jp47yOKS7iVav1Dir3PG4deEuxP7hN6Ll1nDcOYQLobbu5musdPCmq_VsyOg80yRWPtZ7scfSUOHBKhjZzm0ho8JSvpJD6YO29TYk381TR1UC6WcXmidSsfkQ6CZABOzMR8j8jidGABvKr6bKGSwsdt5Gh0eYCgCDKmSnIxsBAPMcpjbTasckoKj7AI0t71AVxQNQHeJ1qcH5t9dyZeDaQ1GKyngee085mBrh2g');"></div>
+<div class="flex-1 flex flex-col justify-center">
+<div class="flex justify-between items-start gap-2">
+<h6 class="font-body-sm text-body-sm text-text-primary font-medium line-clamp-2 mb-1 group-hover:text-secondary transition-colors font-body-sm text-body-sm">Practical Guide to Prompt Engineering for Code Review LLMs</h6>
+<span class="font-label-code text-label-code bg-secondary/10 text-secondary border border-secondary/20 px-2 py-0.5 rounded whitespace-nowrap text-[10px]">Informs Task #02</span>
+</div>
+<span class="font-metadata text-metadata text-text-tertiary font-metadata text-metadata">1 week ago • by AI Engineer</span>
+</div>
+</a>
+</div>
+</div>
+</main>
+</body></html>
