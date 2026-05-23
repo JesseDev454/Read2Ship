@@ -48,6 +48,86 @@ textarea:focus-visible {
   color: white;
 }
 
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(42px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes float-card {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(0.6deg);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes gradient-shimmer {
+  0% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 0 rgba(6, 182, 212, 0));
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 18px rgba(6, 182, 212, 0.18));
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 0 rgba(6, 182, 212, 0));
+  }
+}
+
+@keyframes background-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-18px, 16px, 0);
+  }
+}
+
+@keyframes typewriter-caret {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
 @layer components {
   .card {
     @apply rounded-lg border border-border-subtle bg-surface-card shadow-xl shadow-black/25;
@@ -63,5 +143,107 @@ textarea:focus-visible {
 
   .chip {
     @apply rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium text-text-secondary;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-float-card {
+    animation: float-card 6s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 5s ease-in-out infinite;
+  }
+
+  .animate-gradient-shimmer {
+    background-size: 220% 220%;
+    animation: gradient-shimmer 5s ease-in-out infinite;
+  }
+
+  .animate-background-drift {
+    animation: background-drift 14s ease-in-out infinite;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .landing-card-hover {
+    transform-style: preserve-3d;
+    transition:
+      transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 450ms ease;
+  }
+
+  .landing-card-hover:hover {
+    transform: perspective(1200px) rotateX(2deg) rotateY(-3deg) translateY(-8px);
+    filter: saturate(1.08);
+  }
+
+  .cta-arrow {
+    transition: transform 220ms ease;
+  }
+
+  .cta-link:hover .cta-arrow,
+  .cta-button:hover .cta-arrow {
+    transform: translateX(4px);
+  }
+
+  .typewriter-word {
+    position: relative;
+    display: inline-block;
+    min-width: 15ch;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: bottom;
+  }
+
+  .typewriter-word::after {
+    content: "";
+    position: absolute;
+    bottom: 0.12em;
+    right: -0.12em;
+    height: 0.9em;
+    width: 0.08em;
+    border-radius: 999px;
+    background: #06b6d4;
+    box-shadow: 0 0 14px rgba(6, 182, 212, 0.65);
+    animation: typewriter-caret 760ms steps(1, end) infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .typewriter-word::after {
+    display: none;
   }
 }

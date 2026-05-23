@@ -9,8 +9,8 @@ interface ActionCardProps {
 
 export function ActionCard({ label, title, description, icon }: ActionCardProps) {
   return (
-    <article className="card p-6 transition hover:-translate-y-1 hover:border-primary/40">
-      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-secondary">
+    <article className="card group p-6 transition duration-300 hover:-translate-y-1.5 hover:border-primary/50 hover:shadow-glow">
+      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] text-secondary transition duration-300 group-hover:border-secondary/40 group-hover:bg-secondary/10 group-hover:text-white">
         {icon}
       </div>
       <div className="label-code mb-2">{label}</div>
