@@ -17,16 +17,16 @@ import { useState } from "react";
 const difficultyOptions: Difficulty[] = ["Beginner", "Intermediate", "Advanced"];
 const difficultyDetails: Record<Difficulty, { description: string; bestFor: string }> = {
   Beginner: {
-    description: "Smaller scope, easier implementation tasks, and a faster path to a finished demo.",
-    bestFor: "Best when you want something you can ship quickly or explain easily.",
+    description: "Small scope and faster tasks.",
+    bestFor: "Best for a quick demo.",
   },
   Intermediate: {
-    description: "Balanced scope with enough depth for a hackathon-ready developer tool.",
-    bestFor: "Best default for useful projects that still feel realistic to finish.",
+    description: "Balanced scope with useful depth.",
+    bestFor: "Best default for hackathons.",
   },
   Advanced: {
-    description: "Deeper architecture, integrations, and more challenging implementation choices.",
-    bestFor: "Best when you want a more ambitious plan with stronger technical depth.",
+    description: "More architecture and integrations.",
+    bestFor: "Best for a bigger challenge.",
   },
 };
 
@@ -115,7 +115,7 @@ export function BuildPlanPage() {
             <div className="label-code mb-2">Generated Build Plan</div>
             <h1 className="text-3xl font-bold text-white">Your next build</h1>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-text-secondary">
-              Regenerate keeps your daily.dev analysis and asks AI for a fresh plan. Change difficulty first if you want a different scope.
+              Choose a difficulty, then regenerate for a fresh plan.
             </p>
           </div>
           <div className="w-full max-w-xl rounded-lg border border-white/10 bg-black/20 p-3" data-tour="build-plan-difficulty">
@@ -218,11 +218,6 @@ export function BuildPlanPage() {
               <TechStackChips stack={activePlan.stack} featured />
             </div>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <Link to={`/plan/${activePlan.slug}`}>
-                <Button icon={<Share2 size={18} />} className="w-full sm:w-auto">
-                  Create Share Card
-                </Button>
-              </Link>
               <Button variant="secondary" icon={<Copy size={18} />} onClick={copyPlan}>
                 Copy Plan
               </Button>
@@ -261,17 +256,17 @@ export function BuildPlanPage() {
           {
             target: "build-plan-difficulty",
             title: "Choose the next plan scope",
-            body: "Difficulty changes the next regenerated plan, not the current one on screen.",
+            body: "Choose scope before regenerating.",
           },
           {
             target: "build-plan-regenerate",
             title: "Regenerate a fresh plan",
-            body: "Ask AI for another build idea using the same daily.dev analysis.",
+            body: "Get another idea from this analysis.",
           },
           {
             target: "build-plan-share",
             title: "Create your share card",
-            body: "Open the public card so you can copy the link or download it as an image.",
+            body: "Open the public share card.",
           },
         ]}
       />

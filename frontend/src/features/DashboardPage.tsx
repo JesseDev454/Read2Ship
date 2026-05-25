@@ -243,12 +243,12 @@ export function DashboardPage() {
           {
             target: "dashboard-themes",
             title: "Your reading signals",
-            body: "These sections show what Read2Ship found from your daily.dev activity.",
+            body: "Themes and tools found in your reading.",
           },
           {
             target: "dashboard-generate-plan",
             title: "Generate the build plan",
-            body: "Turn the analysis into a project plan with tasks, stack, and a share card.",
+            body: "Turn analysis into tasks and a share card.",
           },
         ]}
       />

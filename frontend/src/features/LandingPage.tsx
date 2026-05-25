@@ -18,7 +18,7 @@ export function LandingPage() {
           <div className="animate-glow-pulse absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
           <div className="relative mx-auto flex max-w-7xl">
             <div className="max-w-6xl lg:-translate-y-6 xl:-translate-y-8">
-              <h1 className="animate-fade-up max-w-6xl text-5xl font-bold leading-tight tracking-tight text-white [animation-delay:120ms] sm:text-6xl lg:text-7xl xl:text-8xl">
+              <h1 className="animate-fade-up max-w-6xl text-4xl font-bold leading-tight tracking-tight text-white [animation-delay:120ms] sm:text-6xl lg:text-7xl xl:text-8xl">
                 Turn your daily.dev reading into your next{" "}
                 <RotatingTypewriter
                   words={heroTypewriterWords}
@@ -89,7 +89,7 @@ export function LandingPage() {
         </section>
 
         <footer className="border-t border-white/10 px-4 py-8 text-center text-xs text-text-tertiary sm:px-6 lg:px-8">
-          © 2026 Read2Ship. All rights reserved.
+          Copyright 2026 Read2Ship.
         </footer>
       </main>
     </div>

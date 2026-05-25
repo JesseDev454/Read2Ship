@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowRight, KeyRound, Lock, WandSparkles } from "lucide-react";
+import { KeyRound, Lock, WandSparkles } from "lucide-react";
 import { Button } from "../components/Button";
 import { EmptyState } from "../components/EmptyState";
 import { ErrorState } from "../components/ErrorState";
@@ -160,7 +160,7 @@ export function ConnectPage() {
 
   return (
     <ConnectShell>
-      <div className="grid w-full max-w-6xl items-center gap-8 lg:grid-cols-2">
+      <div className="w-full max-w-2xl">
         <form className="panel p-6 sm:p-8" onSubmit={handleSubmit}>
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-white">Connect your daily.dev</h1>
@@ -190,37 +190,6 @@ export function ConnectPage() {
             </Button>
           </div>
         </form>
-
-        <aside className="card relative overflow-hidden p-6 sm:p-8">
-          <div className="absolute inset-0 bg-grid-pattern bg-[size:24px_24px] opacity-20" />
-          <div className="relative z-10">
-            <div className="label-code mb-4">Example Transformation</div>
-            <div className="grid gap-5">
-              <div className="rounded-lg border border-white/10 bg-black/20 p-5">
-                <div className="mb-3 text-sm font-semibold text-text-tertiary">From</div>
-                {[
-                  "Building AI Agents with TypeScript",
-                  "PostgreSQL Performance Tips",
-                  "Designing Better Backend APIs",
-                ].map((title) => (
-                  <div key={title} className="mb-2 rounded-md bg-white/[0.04] px-3 py-2 text-sm text-text-secondary">
-                    Article: {title}
-                  </div>
-                ))}
-              </div>
-              <div className="flex justify-center text-secondary">
-                <ArrowRight size={24} />
-              </div>
-              <div className="rounded-lg border border-primary/30 bg-primary/10 p-5">
-                <div className="mb-3 text-sm font-semibold text-purple-100">To</div>
-                <p className="font-semibold text-white">Suggested build: AI-Powered Code Review Assistant</p>
-                <p className="mt-3 text-sm leading-6 text-text-secondary">
-                  Tasks: webhook endpoint, AI analysis, review summary
-                </p>
-              </div>
-            </div>
-          </div>
-        </aside>
       </div>
       <OnboardingTour
         id="connect"
@@ -228,12 +197,12 @@ export function ConnectPage() {
           {
             target: "dailydev-token-input",
             title: "Paste your daily.dev token",
-            body: "Read2Ship uses it only for this analysis request. The token is not stored.",
+            body: "It is used once and not stored.",
           },
           {
             target: "analyze-reading-button",
             title: "Analyze your reading",
-            body: "This detects your themes and stack signals, then generates your first build plan.",
+            body: "Find themes and create your plan.",
           },
         ]}
       />
