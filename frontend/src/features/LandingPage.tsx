@@ -16,16 +16,16 @@ export function LandingPage() {
         <section className="relative px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
           <div className="animate-background-drift absolute inset-0 bg-grid-pattern bg-[size:28px_28px] opacity-30" />
           <div className="animate-glow-pulse absolute left-1/2 top-20 h-96 w-96 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
-          <div className="relative mx-auto flex max-w-7xl">
-            <div className="max-w-6xl lg:-translate-y-6 xl:-translate-y-8">
-              <h1 className="animate-fade-up max-w-6xl text-4xl font-bold leading-tight tracking-tight text-white [animation-delay:120ms] sm:text-6xl lg:text-7xl xl:text-8xl">
+          <div className="relative mx-auto flex max-w-7xl min-w-0">
+            <div className="min-w-0 max-w-6xl lg:-translate-y-6 xl:-translate-y-8">
+              <h1 className="animate-fade-up max-w-full text-wrap break-words text-4xl font-bold leading-tight tracking-tight text-white [animation-delay:120ms] sm:max-w-6xl sm:text-6xl lg:text-7xl xl:text-8xl">
                 Turn your daily.dev reading into your next{" "}
                 <RotatingTypewriter
                   words={heroTypewriterWords}
                   className="animate-gradient-shimmer bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent"
                 />
               </h1>
-              <p className="animate-fade-up mt-7 max-w-3xl text-lg leading-8 text-text-secondary [animation-delay:240ms] sm:text-xl sm:leading-9">
+              <p className="animate-fade-up mt-7 max-w-full text-wrap break-words text-base leading-7 text-text-secondary [animation-delay:240ms] sm:max-w-3xl sm:text-xl sm:leading-9">
                 Read2Ship analyzes your daily.dev content and generates practical
                 mini-projects, implementation tasks, and shareable build plans.
               </p>

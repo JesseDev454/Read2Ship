@@ -207,16 +207,23 @@ textarea:focus-visible {
 
   .typewriter-word {
     position: relative;
-    display: inline-block;
-    max-width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    vertical-align: bottom;
+    display: block;
+    width: fit-content;
+    max-width: calc(100vw - 2rem);
+    overflow: visible;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    vertical-align: baseline;
   }
 
   @media (min-width: 640px) {
     .typewriter-word {
+      display: inline-block;
       min-width: 15ch;
+      max-width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      vertical-align: bottom;
     }
   }
 
